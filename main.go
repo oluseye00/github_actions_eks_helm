@@ -140,11 +140,11 @@ func addHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/view/", makeHandler(viewHandler))
-	http.HandleFunc("/edit/", makeHandler(editHandler))
-	http.HandleFunc("/save/", makeHandler(saveHandler))
-	http.HandleFunc("/", listHandler)
-	http.HandleFunc("/add", addHandler)
-	log.Println("The application is running on port 80...")
-	log.Fatal(http.ListenAndServe(":8080", ...))
+    http.HandleFunc("/view/", makeHandler(viewHandler))
+    http.HandleFunc("/edit/", makeHandler(editHandler))
+    http.HandleFunc("/save/", makeHandler(saveHandler))
+    http.HandleFunc("/", listHandler)
+    http.HandleFunc("/add", addHandler)
+    log.Println("The application is running on port 8080...")
+    log.Fatal(http.ListenAndServe(":8080", nil))
 }
