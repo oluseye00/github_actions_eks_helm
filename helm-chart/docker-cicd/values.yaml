@@ -74,12 +74,17 @@ resources: {}
 livenessProbe:
   httpGet:
     path: /
-    port: http
+    port: 8080
+  initialDelaySeconds: 15
+  periodSeconds: 20
+  timeoutSeconds: 10  
 readinessProbe:
   httpGet:
     path: /
-    port: http
-
+    port: 8080
+  initialDelaySeconds: 15
+  periodSeconds: 20
+  timeoutSeconds: 10  
 autoscaling:
   enabled: false
   minReplicas: 1
